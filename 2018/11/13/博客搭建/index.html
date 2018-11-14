@@ -266,7 +266,7 @@ height:50vh;
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">502</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">503</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
@@ -407,24 +407,20 @@ height:50vh;
 <p>之后按照自己需求安装即可。</p>
 <h3 id="本地安装Hexo框架"><a href="#本地安装Hexo框架" class="headerlink" title="本地安装Hexo框架"></a>本地安装Hexo框架</h3><p>选择一个自己觉得适合的位置，然后创建一个文件夹。通过命令进入该文件夹</p>
 <p>开始安装hexo</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install hexo-cli -g</span><br></pre></td></tr></table></figure>
-<p>之后输入hexo -v 进行检查是否安装成功。</p>
+<pre><code>npm install hexo-cli -g
+</code></pre><p>之后输入hexo -v 进行检查是否安装成功。</p>
 <p>到此本地需要的所有环境就全部OK了。</p>
 <p>下面进行讲解如何搭建Hexo 博客</p>
 <h2 id="二-本地搭建Hexo"><a href="#二-本地搭建Hexo" class="headerlink" title="二. 本地搭建Hexo"></a>二. 本地搭建Hexo</h2><h3 id="本地初始化"><a href="#本地初始化" class="headerlink" title="本地初始化"></a>本地初始化</h3><p>在之前我们选好的文件夹中</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">hexo init  || hexo init [name] // 初始化我们的项目,可以使用name来自定义名字</span><br><span class="line">npm install  // 安装需要的组件</span><br><span class="line">hexo g  // hexo的自带命令，g是gengerate的缩写 该命令是生成静态的。</span><br><span class="line">hexo server // 开启一个本地服务器，用来体验Hexo 如果页面一直无法跳转，可能是端口被占用，Ctrl + c 停止服务</span><br><span class="line">hexo server -p 端口号   // 这样指定一个我们没被占用的端口即可</span><br></pre></td></tr></table></figure>
-<p>出现下面的图片<br><img src="/2018/11/13/博客搭建/hexoinit.png" alt="init图片"></p>
+<pre><code>hexo init  || hexo init [name] // 初始化我们的项目,可以使用name来自定义名字
+npm install  // 安装需要的组件
+hexo g  // hexo的自带命令，g是gengerate的缩写 该命令是生成静态的。
+hexo server // 开启一个本地服务器，用来体验Hexo 如果页面一直无法跳转，可能是端口被占用，Ctrl + c 停止服务
+hexo server -p 端口号   // 这样指定一个我们没被占用的端口即可
+</code></pre><p>出现下面的图片<br><img src="/2018/11/13/博客搭建/hexoinit.png" alt="init图片"></p>
 <h3 id="嗯哼，本地搭建完成。下一篇讲如何部署到服务器以及配置自己的域名。"><a href="#嗯哼，本地搭建完成。下一篇讲如何部署到服务器以及配置自己的域名。" class="headerlink" title="嗯哼，本地搭建完成。下一篇讲如何部署到服务器以及配置自己的域名。"></a>嗯哼，本地搭建完成。下一篇讲如何部署到服务器以及配置自己的域名。</h3>
     </article>
     <!-- license  -->
-    
-        <div class="license-wrapper">
-            <p>原文作者：<a href="http://zeng-rui.cn">蘑菇</a>
-            </p><p>原文链接：<a href="http://zeng-rui.cn/2018/11/13/博客搭建/">http://zeng-rui.cn/2018/11/13/博客搭建/</a>
-            </p><p>发表日期：<a href="http://zeng-rui.cn/2018/11/13/博客搭建/">November 13th 2018, 8:31:08 pm</a>
-            </p><p>更新日期：<a href="http://zeng-rui.cn/2018/11/13/博客搭建/">November 13th 2018, 8:45:44 pm</a>
-            </p><p>版权声明：本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
-        </div>
     
     <!-- paginator  -->
     <ul class="post-paginator">
@@ -442,6 +438,21 @@ height:50vh;
     </ul>
     <!-- 评论插件 -->
     <!-- 来必力City版安装代码 -->
+
+    <div id="lv-container" data-id="city" data-uid="MTAyMC80MTAyNi8xNzU1MQ==">
+        <script type="text/javascript">
+            (function (d, s) {
+                var j, e = d.getElementsByTagName(s)[0];
+                if (typeof LivereTower === 'function') { return; }
+                j = d.createElement(s);
+                j.src = 'https://cdn-city.livere.com/js/embed.dist.js';
+                j.async = true;
+
+                e.parentNode.insertBefore(j, e);
+            })(document, 'script');
+        </script>
+        <noscript>为正常使用来必力评论功能请激活JavaScript</noscript>
+    </div>
 
 <!-- City版安装代码已完成 -->
     
