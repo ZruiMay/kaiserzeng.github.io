@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>蘑菇博客</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://zeng-rui.cn/"/>
+  <updated>2018-11-13T12:45:44.081Z</updated>
+  <id>http://zeng-rui.cn/</id>
+  
+  <author>
+    <name>蘑菇</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>hexo博客搭建以及书写语法文档</title>
+    <link href="http://zeng-rui.cn/2018/11/17/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
+    <id>http://zeng-rui.cn/2018/11/17/博客搭建/</id>
+    <published>2018-11-17T08:45:46.139Z</published>
+    <updated>2018-11-13T12:45:44.081Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Hexo-github-个人域名-搭建个人博客-一"><a href="#Hexo-github-个人域名-搭建个人博客-一" class="headerlink" title="Hexo + github + 个人域名 搭建个人博客(一)"></a>Hexo + github + 个人域名 搭建个人博客(一)</h1><h2 id="一-本地准备阶段"><a href="#一-本地准备阶段" class="headerlink" title="一. 本地准备阶段"></a>一. 本地准备阶段</h2><h3 id="简单了解Hexo"><a href="#简单了解Hexo" class="headerlink" title="简单了解Hexo"></a>简单了解Hexo</h3><p>一款基于Node.js 的静态站点生成框架，可以使用Markdown进行文章编写。可以使用Hexo提供的标签插件进行特定内容插入。</p><h3 id="本地安装Node-js环境"><a href="#本地安装Node-js环境" class="headerlink" title="本地安装Node.js环境"></a>本地安装Node.js环境</h3><p>下载安装Node.js</p><p>下载地址：<a href="http://nodejs.cn/download" target="_blank" rel="noopener">http://nodejs.cn/download</a> </p><p>安装之后，进入cmd, 进行查看安装版本，输入 node -v 或者 npm -v来查看Node.js 是否安装完成。</p><p>新版的node.js 会自动配置好环境变量，如果是老版本，需要自己配置环境变量。</p><h3 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h3><p>下载git  下载地址： <a href="https://gitforwindows.org/" target="_blank" rel="noopener">https://gitforwindows.org/</a></p><p>windows上安装比较简单，不多说，直接安装就可以了，cmd 查看安装是否成功 git –version</p><p>安装可视化工具，本人使用的是TortoiseGit</p><p>下载地址：<a href="https://download.tortoisegit.org/tgit/" target="_blank" rel="noopener">https://download.tortoisegit.org/tgit/</a></p><p>之后按照自己需求安装即可。</p><h3 id="本地安装Hexo框架"><a href="#本地安装Hexo框架" class="headerlink" title="本地安装Hexo框架"></a>本地安装Hexo框架</h3><p>选择一个自己觉得适合的位置，然后创建一个文件夹。通过命令进入该文件夹</p><p>开始安装hexo</p><pre><code>npm install hexo-cli -g</code></pre><p>之后输入hexo -v 进行检查是否安装成功。</p><p>到此本地需要的所有环境就全部OK了。</p><p>下面进行讲解如何搭建Hexo 博客</p><h2 id="二-本地搭建Hexo"><a href="#二-本地搭建Hexo" class="headerlink" title="二. 本地搭建Hexo"></a>二. 本地搭建Hexo</h2><h3 id="本地初始化"><a href="#本地初始化" class="headerlink" title="本地初始化"></a>本地初始化</h3><p>在之前我们选好的文件夹中</p><pre><code>hexo init  || hexo init [name] // 初始化我们的项目,可以使用name来自定义名字npm install  // 安装需要的组件hexo g  // hexo的自带命令，g是gengerate的缩写 该命令是生成静态的。hexo server // 开启一个本地服务器，用来体验Hexo 如果页面一直无法跳转，可能是端口被占用，Ctrl + c 停止服务hexo server -p 端口号   // 这样指定一个我们没被占用的端口即可</code></pre><p>出现下面的图片<br><img src="/2018/11/17/博客搭建/hexoinit.png" alt="init图片"></p><h3 id="嗯哼，本地搭建完成。下一篇讲如何部署到服务器以及配置自己的域名。"><a href="#嗯哼，本地搭建完成。下一篇讲如何部署到服务器以及配置自己的域名。" class="headerlink" title="嗯哼，本地搭建完成。下一篇讲如何部署到服务器以及配置自己的域名。"></a>嗯哼，本地搭建完成。下一篇讲如何部署到服务器以及配置自己的域名。</h3>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Hexo-github-个人域名-搭建个人博客-一&quot;&gt;&lt;a href=&quot;#Hexo-github-个人域名-搭建个人博客-一&quot; class=&quot;headerlink&quot; title=&quot;Hexo + github + 个人域名 搭建个人博客(一)&quot;&gt;&lt;/a&gt;Hexo +
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>蘑菇博客</title>
+    <link href="http://zeng-rui.cn/2018/11/17/first/"/>
+    <id>http://zeng-rui.cn/2018/11/17/first/</id>
+    <published>2018-11-17T08:45:46.137Z</published>
+    <updated>2018-11-13T12:50:10.700Z</updated>
+    
+    <content type="html"><![CDATA[<p>还没想好第一篇要写什么。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;还没想好第一篇要写什么。&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+</feed>
