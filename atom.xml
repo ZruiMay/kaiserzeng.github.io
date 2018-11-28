@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://zeng-rui.cn/"/>
-  <updated>2018-11-13T12:45:44.081Z</updated>
+  <updated>2018-11-28T07:37:16.964Z</updated>
   <id>http://zeng-rui.cn/</id>
   
   <author>
@@ -17,11 +17,32 @@
   <generator uri="http://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>hexo博客搭建以及书写语法文档</title>
+    <title>Hexo + github + 个人域名 搭建个人博客（二）</title>
+    <link href="http://zeng-rui.cn/2018/11/28/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA%E4%BA%8C/"/>
+    <id>http://zeng-rui.cn/2018/11/28/博客搭建二/</id>
+    <published>2018-11-28T04:35:34.047Z</published>
+    <updated>2018-11-28T07:37:16.964Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="Hexo-github-个人域名-搭建个人博客-二"><a href="#Hexo-github-个人域名-搭建个人博客-二" class="headerlink" title="Hexo + github + 个人域名 搭建个人博客(二)"></a>Hexo + github + 个人域名 搭建个人博客(二)</h1><h2 id="一-申请Github账号以及配置github-page"><a href="#一-申请Github账号以及配置github-page" class="headerlink" title="一. 申请Github账号以及配置github page"></a>一. 申请Github账号以及配置github page</h2><h3 id="申请Github的账号，如果有账号，进行登录"><a href="#申请Github的账号，如果有账号，进行登录" class="headerlink" title="申请Github的账号，如果有账号，进行登录"></a>申请Github的账号，如果有账号，进行登录</h3><p>账号申请请自行进行，这里贴出来登录之后的操作。</p><p>先创建一个项目,我是有其他项目，所以是这个页面，如果是新注册的，点头像，下面就有New repository 的选项。</p><p><img src="/2018/11/28/博客搭建二/blog01.png" alt="1543381332758"></p><p>这下面框选的地方，名字必须是你的用户名加上.github.io我这里是 因为我已经创建过了同名的，所以提示，请忽略。</p><p><img src="/2018/11/28/博客搭建二/blog02.png" alt="1543381653885"></p><p>然后点进去你刚创建的项目，点击Settings,然后配置你的page ,github page 只能给每个人分配一个name,就以你上面创建的昵称为准，所以，这里要填些之前的名称。格式也必须是youname.github.io</p><p><img src="/2018/11/28/博客搭建二/blog04.png" alt="1543382385101"></p><h3 id="本地SSH密钥"><a href="#本地SSH密钥" class="headerlink" title="本地SSH密钥"></a>本地SSH密钥</h3><p>下面进行SSH 的配置，让我们本地项目代码和Github 建立关联。</p><p>上一篇已经讲过在本地安装git 以及可视乎工具</p><p>先打开本地的git base,右键选择就好了的。</p><p><img src="/2018/11/28/博客搭建二/blog05.png" alt="1543383923640"></p><p>先检查是否有SSH key </p><p>命令是cd ~/.ssh</p><p>之后ll 或者ls 都可以，就可以查看到了。</p><p><img src="/2018/11/28/博客搭建二/blog06.png" alt="1543384720586"></p><p>我本地是有的。如果各位的是提示 <strong>No such file or directory</strong></p><p>那就是之前没有过，没关系，我们使用Git base创建一个新的即可。</p><p><code>ssh-keygen -t rsa -C &#39;youemail.com&#39;</code> 这里填些你自己的邮箱就可以了的。</p><p>之后进行回车，然后会提示你设定保存的地址，直接回车，使用默认的就可以。</p><p>之后会提示你输入密码，输入就可以了，密码输入是看不到的，当然你也可以不设，直接回车。</p><p>之后是重复密码。再次输入你的密码，然后继续你的回车之旅。</p><p>这时候，你会在看到提示你生成两个文件在你的.ssh文件夹生成了两个文件</p><p>.ssh/id_rsa  这是密钥</p><p>.ssh/id_rsa.pub  这是公钥</p><p>如果有对SSH不太理解的，可以去看一下阮大神的博客<a href="http://www.ruanyifeng.com/blog/2011/12/ssh_remote_login.html" target="_blank" rel="noopener">《SSH原理与运用》</a></p><p>之后找到你刚才生成的id_rsa 文件，打开，复制里面的所有内容。</p><h3 id="配置github密钥"><a href="#配置github密钥" class="headerlink" title="配置github密钥"></a>配置github密钥</h3><p><img src="/2018/11/28/博客搭建二/blog07.png" alt="1543386203427"></p><p><img src="/2018/11/28/博客搭建二/blog08.png" alt="1543386303773"></p><p>Github配置好了之后，在本地的git base 测试SSH 是否成功</p><p>命令是 <code>ssh -T git@github.com</code></p><p><img src="/2018/11/28/博客搭建二/blog09.png" alt="1543386473220"></p><p>返回你的用户名，和成功提示就Ok了的。</p><p>这里如果失败了。清除你之前生成的密钥，然后重新来一遍。</p><p>配置的最后一步，坚持一下，胜利就在眼前。</p><p>打开我们之前的Hexo生成的文件。</p><p>_config.yml是配置文件，</p><p>打开配置文件，对deploy 进行配置。</p><p><img src="/2018/11/28/博客搭建二/blog10.png" alt="1543386961013"></p><p>这里配置你自己的地址就好了的。这个地址就是你之前在github上创建的项目地址，点击clone</p><p><img src="/2018/11/28/博客搭建二/blog11.png" alt="1543387077712"></p><p>OK，基本都搞定了，就是见证自己博客的时刻了。</p><p>本地打开自己的博客文件，在命令行输入</p><p><code>hexo clean</code> 清除之前 打包的文件</p><p><code>hexo d -g</code>打包并将本地的代码发布到github page 的服务器上面。</p><p>出现弹框的话，将你github上输入的账号和密码输入就好了。</p><p>之后，在浏览器输入你在github 上配置的名称。</p><p><a href="https://youname.git.io" target="_blank" rel="noopener">https://youname.git.io</a></p><p>你就可以看到你的博客了的。</p><p><img src="/2018/11/28/博客搭建二/blog13.png" alt="1543387653348"></p><p>大家看到我的域名是不同的，是因为我加了个人域名，所以，当我输入之前github上配置的域名的时候，会自动跳转我的个人域名。</p><p>配置个人域名其实很简单，不过多的讲解。</p><p>直接上两张图，应该都能看的懂。</p><p>先去购买域名，先说一下，我试过了，域名需要备案，要不会失败，反正我的都是这样的。之后就是将你的域名绑定到</p><p>github page 提供给你的域名上，如果不喜欢些域名，就先本地ping github 的这个域名，得到ip</p><p><img src="/2018/11/28/博客搭建二/blog14.png" alt="1543387901850"></p><p>github 上，进入你项目，然后是Setting</p><p><img src="/2018/11/28/博客搭建二/blog15.png" alt="1543388166347"></p><p>到这里，打包，部署，以及绑定个人域名，就都结束了。</p><h2 id="结束？不可能结束"><a href="#结束？不可能结束" class="headerlink" title="结束？不可能结束"></a>结束？不可能结束</h2><p>很多人觉得默认的博客不好看，下一篇，记录更换主题以及Markdown的常用语法。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;Hexo-github-个人域名-搭建个人博客-二&quot;&gt;&lt;a href=&quot;#Hexo-github-个人域名-搭建个人博客-二&quot; class=&quot;headerlink&quot; title=&quot;Hexo + github + 个人域名 搭建个人博客(二)&quot;&gt;&lt;/a&gt;Hexo +
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Hexo + github + 个人域名 搭建个人博客（一）</title>
     <link href="http://zeng-rui.cn/2018/11/17/%E5%8D%9A%E5%AE%A2%E6%90%AD%E5%BB%BA/"/>
     <id>http://zeng-rui.cn/2018/11/17/博客搭建/</id>
     <published>2018-11-17T08:45:46.139Z</published>
-    <updated>2018-11-13T12:45:44.081Z</updated>
+    <updated>2018-11-28T07:38:17.919Z</updated>
     
     <content type="html"><![CDATA[<h1 id="Hexo-github-个人域名-搭建个人博客-一"><a href="#Hexo-github-个人域名-搭建个人博客-一" class="headerlink" title="Hexo + github + 个人域名 搭建个人博客(一)"></a>Hexo + github + 个人域名 搭建个人博客(一)</h1><h2 id="一-本地准备阶段"><a href="#一-本地准备阶段" class="headerlink" title="一. 本地准备阶段"></a>一. 本地准备阶段</h2><h3 id="简单了解Hexo"><a href="#简单了解Hexo" class="headerlink" title="简单了解Hexo"></a>简单了解Hexo</h3><p>一款基于Node.js 的静态站点生成框架，可以使用Markdown进行文章编写。可以使用Hexo提供的标签插件进行特定内容插入。</p><h3 id="本地安装Node-js环境"><a href="#本地安装Node-js环境" class="headerlink" title="本地安装Node.js环境"></a>本地安装Node.js环境</h3><p>下载安装Node.js</p><p>下载地址：<a href="http://nodejs.cn/download" target="_blank" rel="noopener">http://nodejs.cn/download</a> </p><p>安装之后，进入cmd, 进行查看安装版本，输入 node -v 或者 npm -v来查看Node.js 是否安装完成。</p><p>新版的node.js 会自动配置好环境变量，如果是老版本，需要自己配置环境变量。</p><h3 id="安装Git"><a href="#安装Git" class="headerlink" title="安装Git"></a>安装Git</h3><p>下载git  下载地址： <a href="https://gitforwindows.org/" target="_blank" rel="noopener">https://gitforwindows.org/</a></p><p>windows上安装比较简单，不多说，直接安装就可以了，cmd 查看安装是否成功 git –version</p><p>安装可视化工具，本人使用的是TortoiseGit</p><p>下载地址：<a href="https://download.tortoisegit.org/tgit/" target="_blank" rel="noopener">https://download.tortoisegit.org/tgit/</a></p><p>之后按照自己需求安装即可。</p><h3 id="本地安装Hexo框架"><a href="#本地安装Hexo框架" class="headerlink" title="本地安装Hexo框架"></a>本地安装Hexo框架</h3><p>选择一个自己觉得适合的位置，然后创建一个文件夹。通过命令进入该文件夹</p><p>开始安装hexo</p><pre><code>npm install hexo-cli -g</code></pre><p>之后输入hexo -v 进行检查是否安装成功。</p><p>到此本地需要的所有环境就全部OK了。</p><p>下面进行讲解如何搭建Hexo 博客</p><h2 id="二-本地搭建Hexo"><a href="#二-本地搭建Hexo" class="headerlink" title="二. 本地搭建Hexo"></a>二. 本地搭建Hexo</h2><h3 id="本地初始化"><a href="#本地初始化" class="headerlink" title="本地初始化"></a>本地初始化</h3><p>在之前我们选好的文件夹中</p><pre><code>hexo init  || hexo init [name] // 初始化我们的项目,可以使用name来自定义名字npm install  // 安装需要的组件hexo g  // hexo的自带命令，g是gengerate的缩写 该命令是生成静态的。hexo server // 开启一个本地服务器，用来体验Hexo 如果页面一直无法跳转，可能是端口被占用，Ctrl + c 停止服务hexo server -p 端口号   // 这样指定一个我们没被占用的端口即可</code></pre><p>出现下面的图片<br><img src="/2018/11/17/博客搭建/hexoinit.png" alt="init图片"></p><h3 id="嗯哼，本地搭建完成。下一篇讲如何部署到服务器以及配置自己的域名。"><a href="#嗯哼，本地搭建完成。下一篇讲如何部署到服务器以及配置自己的域名。" class="headerlink" title="嗯哼，本地搭建完成。下一篇讲如何部署到服务器以及配置自己的域名。"></a>嗯哼，本地搭建完成。下一篇讲如何部署到服务器以及配置自己的域名。</h3>]]></content>
     
